@@ -1,0 +1,91 @@
+@mixin buttonBasicProp
+{
+    margin-inline: 2%;
+    margin-block: 1vh;
+}
+
+:root
+{
+    --font-size-small: 8px;
+    --font-size-medium: 12px;
+    --font-size-large: 18px;
+}
+
+@mixin fontStyle
+{
+    @media screen and (max-width: 600px)
+    {
+        font-size: var(--font-size-small);
+    }
+    
+    @media screen and (min-width: 601px) and (max-width: 799px) and (min-height: 200px)
+    {
+        font-size: var(--font-size-medium);
+    }
+    
+    @media screen and (min-width: 900px) and (min-height: 400px)
+    {
+        font-size: var(--font-size-large);
+    }
+}
+body
+{
+    background-image: url('images/bg.svg');
+    background-size: cover, cover;
+    background-position: center top, center bottomm; 
+    background-repeat: repeat-y;
+    margin: 0;
+    padding: 0;
+}
+
+.navigationBar
+{
+    margin: 0px;
+    width: 100%;
+    height: 10vh;
+    min-height: 30px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 20%, rgba(253,187,45,1) 100%);
+    border-radius: 5%;
+    border: 0px;
+    display: inline-flex;
+    justify-content: space-between;
+
+    &__homeButton {
+        width: fit-content;
+        min-width: 15px;
+        @include buttonBasicProp;
+        cursor: pointer;
+        transition: border-radius 0.7s;
+        transition-timing-function: ease-in-out;
+        border-radius: 25%;
+        border: 0px;
+    }
+
+    &__loginButton {
+        @include fontStyle;
+        text-align: right;
+        padding-right: 3vw;
+        width: 15vw;
+        min-width: 25px;
+        @include buttonBasicProp;
+        cursor: pointer;
+        border-radius: 100%;
+        background-image: url('images/login.png');
+        background-size: cover;
+        background-position: center;
+        transition: 0.5s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &__loginButton:hover {
+        background-image: url('images/login.gif');
+    }
+
+    &__homeButton:hover {
+        border-radius: 100%;
+        //background: rgb(34,193,195);
+        //background: linear-gradient(0deg, rgba(34,193,195,1) 20%, rgba(219,132,209,1) 100%);
+        border: 0px;
+    }
+}
