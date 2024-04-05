@@ -17,7 +17,7 @@ body {
   margin: 0px;
   width: 100%;
   height: 10vh;
-  min-height: 30px;
+  min-height: 50px;
   background: rgb(34, 193, 195);
   background: linear-gradient(0deg, rgb(34, 193, 195) 20%, rgb(253, 187, 45) 100%);
   border-radius: 5%;
@@ -36,6 +36,10 @@ body {
   transition-timing-function: ease-in-out;
   border-radius: 25%;
   border: 0px;
+}
+.navigationBar__logo {
+  width: 15vw;
+  height: 100%;
 }
 .navigationBar__loginButton {
   text-align: right;
