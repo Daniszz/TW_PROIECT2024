@@ -10,22 +10,25 @@
     <title>M-PIC</title>
     <link rel="icon" type="image/x-icon" href="images/logo.svg">
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
     <div class="navigationBar">
-        <button class="navigationBar__homeButton">
+        <button class="navigationBar__homeButton" onclick="goTop()">
             <img src="images/logo.svg" style="width: 100%; height: 100%;">
         </button>
         <img src="images/navLogo.svg" class="navigationBar__logo">
-        <button class="navigationBar__loginButton">Log in</button>
+        <button class="navigationBar__loginButton" onclick="login()">Log in</button>
     </div>
 
     <div class="masterSection">
-
+        <div class="masterSection__loginSection"></div>
+        <div class="masterSection__addPostSection"></div>
+        <div class="masterSection__profileSection"></div>
     </div>
-    <button class="addPostButton">New<br>post</button>
-    <button class="viewProfileButton">View<br>profile</button>
+    <button class="addPostButton" onclick="addPost()">New<br>post</button>
+    <button class="viewProfileButton" onclick="viewProfile()">View<br>profile</button>
 </body>
 
 </html>
