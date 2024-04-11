@@ -43,7 +43,9 @@ body {
   border: 0px;
 }
 .navigationBar__logo {
-  width: 15vw;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 12vw;
   height: 100%;
 }
 .navigationBar__loginButton {
@@ -100,6 +102,10 @@ body {
   box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   width: max(9vh, 9vw);
   height: max(9vh, 9vw);
   min-width: 25px;
@@ -143,6 +149,10 @@ body {
   box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   width: max(9vh, 9vw);
   height: max(9vh, 9vw);
   min-width: 0.5cm;
