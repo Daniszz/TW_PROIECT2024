@@ -186,10 +186,55 @@ body {
 }
 .masterSection__loginSection {
   display: none;
+  position: fixed;
+  top: 20vh;
+  left: 25vw;
+  right: 25vw;
+  bottom: 20vh;
+  width: 50vw;
+  height: 60vh;
+  background-color: #FF2D95;
+  border-radius: 5%;
+  background-image: url("images/popUpBackground.svg");
+  background-size: cover;
 }
 .masterSection__addPostSection {
   display: none;
+  position: fixed;
+  top: 20vh;
+  left: 25vw;
+  right: 25vw;
+  bottom: 20vh;
+  width: 50vw;
+  height: 60vh;
+  background-color: #FF2D95;
+  border-radius: 5%;
+  background-image: url("images/popUpBackground.svg");
+  background-size: cover;
 }
-.masterSection__addPostSection {
+.masterSection__profileSection {
   display: none;
+  position: fixed;
+  top: 20vh;
+  left: 25vw;
+  right: 25vw;
+  bottom: 20vh;
+  width: 50vw;
+  height: 60vh;
+  background-color: #FF2D95;
+  border-radius: 5%;
+  background-image: url("images/popUpBackground.svg");
+  background-size: cover;
+}
+.masterSection__closePopUp {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: max(3vh, 3vw);
+  height: max(3vh, 3vw);
+  background-image: url("images/closeButton.svg");
+  background-size: cover;
+  background-color: black;
+  border: none;
+  border-radius: 100%;
 }/*# sourceMappingURL=main.css.map */

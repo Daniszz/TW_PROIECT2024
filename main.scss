@@ -28,6 +28,7 @@
         font-size: var(--font-size-large);
     }
 }
+
 body
 {
     background-image: url('images/bg.svg');
@@ -167,18 +168,50 @@ body
         display: block;
         //todo
     }
+    
+    @mixin popUp
+    {
+        position: fixed;
+        top: 20vh;
+        left: 25vw;
+        right: 25vw;
+        bottom: 20vh;
+        width: 50vw;
+        height: 60vh;
+        background-color: #FF2D95;
+        border-radius: 5%;
+        background-image: url('images/popUpBackground.svg');
+        background-size: cover;
+    }
 
     &__loginSection {
         display: none;
+        @include popUp;
         //todo
     }
 
     &__addPostSection {
         display: none;
+        @include popUp;
         //todo
     }
-    &__addPostSection {
+
+    &__profileSection {
         display: none;
+        @include popUp;
         //todo
+    }
+
+    &__closePopUp {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        width: calc(max(3vh, 3vw));;
+        height: calc(max(3vh, 3vw));;
+        background-image: url('images/closeButton.svg');
+        background-size: cover;
+        background-color: black;
+        border: none;
+        border-radius: 100%;
     }
 }
