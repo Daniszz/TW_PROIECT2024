@@ -1,3 +1,19 @@
 <div class="masterSection__loginSection">
     <button class="masterSection__closePopUp" onclick="closeLogin()"></button>
+    <div class="FormContainer">
+        <form id="loginForm">
+            <div class="formField">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="formField">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="formActions">
+                <button type="submit">Login</button>
+                <button type="button" onclick="viewRegister()">Register</button>
+            </div>
+        </form>
+    </div>
 </div>
