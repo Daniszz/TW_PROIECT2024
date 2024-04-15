@@ -1,3 +1,67 @@
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("http://localhost/m-pic/login.html")
+        .then(response => response.text())
+        .then(html => {
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = html;
+            const contents = tempContainer.childNodes;
+            const mainContainer = document.querySelector('.masterSection');
+
+            contents.forEach(node => {
+                mainContainer.appendChild(node);
+            });
+        })
+        .catch(error => console.error("Error fetching content:", error));
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("http://localhost/m-pic/newPost.html")
+        .then(response => response.text())
+        .then(html => {
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = html;
+            const contents = tempContainer.childNodes;
+            const mainContainer = document.querySelector('.masterSection');
+
+            contents.forEach(node => {
+                mainContainer.appendChild(node);
+            });
+        })
+        .catch(error => console.error("Error fetching content:", error));
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("http://localhost/m-pic/viewProfile.html")
+        .then(response => response.text())
+        .then(html => {
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = html;
+            const contents = tempContainer.childNodes;
+            const mainContainer = document.querySelector('.masterSection');
+
+            contents.forEach(node => {
+                mainContainer.appendChild(node);
+            });
+        })
+        .catch(error => console.error("Error fetching content:", error));
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("http://localhost/m-pic/policy.html")
+        .then(response => response.text())
+        .then(html => {
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = html;
+            const contents = tempContainer.childNodes;
+            const mainContainer = document.querySelector('.masterSection');
+
+            contents.forEach(node => {
+                mainContainer.appendChild(node);
+            });
+        })
+        .catch(error => console.error("Error fetching content:", error));
+});
+
 function goTop() {
     window.scrollTo( {top: 0, behavior: 'smooth'} );
 }
