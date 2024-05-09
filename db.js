@@ -1,83 +1,37 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
 
-const port = 3000;
+// login.js
 
-const server = http.createServer(function(req, res) {
-    // Set content type based on file extension
-    const contentType = {
-        '.html': 'text/html',
-        '.css': 'text/css',
-        '.js': 'text/javascript',
-        '.svg': 'image/svg+xml',
-        '.png': 'image/png'
-    };
 
-    let filePath = '.' + req.url;
-    if (filePath === './') {
-        filePath = './main.html'; // Default file to serve
+const querystring = require('querystring');
+
+async function handleFormSubmission(req, res) {
+    if (req.method === 'POST' && req.url === '/login') {
+      let body= '';
+      req.on('data', chunk => {
+          body += chunk.toString();
+      });
+      const data = await new Promise(async (resolve, reject) => {
+          req.on('end', () => {
+              try {
+                  resolve(querystring.parse(body));
+              } catch (error) {
+                  reject(error);
+              }
+          });
+      })
+        
+        const username = data.username;
+        console.log(username);
+        const password = data.password;
+        console.log(password);
     }
+}
 
-    const extname = path.extname(filePath);
-    const contentTypeHeader = contentType[extname] || 'application/octet-stream';
+module.exports = handleFormSubmission;
 
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+// Export the startServer function
 
-    fs.readFile(filePath, function(error, data) {
-        if (error) {
-            if (error.code === 'ENOENT') {
-                res.writeHead(404);
-                res.end('Error: File Not Found');
-            } else {
-                res.writeHead(500);
-                res.end('Server Error: ' + error.code);
-            }
-        } else {
-            res.writeHead(200, { 'Content-Type': contentTypeHeader });
-            res.end(data);
-        }
-    });
-});
-
-server.listen(port, function(error) {
-    if (error) {
-        console.log('Error starting server:', error);
-    } else {
-        console.log('Server is running on port', port);
-    }
-});
-
-
-
-/*const mysql = require('mysql');
-const express = require('express');
-const bodyParser = require('body-parser');
-const info = express();
-
-const path = require('path'); //for path fin
-
-const app = express();
-
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use(bodyParser.json());
-
-app.post('/submit-form', (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
-    console.log('Username:', username);
-    console.log('Password:', password);
-    // Process the form data as needed
-    res.send('Form submitted successfully');
-});
-
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
-
-const connection = mysql.createConnection({
+/*const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '', 
@@ -102,5 +56,4 @@ connection.query('SELECT * FROM users', (err, rows) => {
   });
 
 
-connection.end();
-*/
+connection.end();*/
