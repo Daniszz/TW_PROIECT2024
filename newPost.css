@@ -1,0 +1,90 @@
+:root {
+  --font-size-small: 10px;
+  --font-size-medium: 12px;
+  --font-size-large: 18px;
+}
+
+.newPost__description {
+  color: rgb(237, 1, 1);
+  font-family: Arial;
+  width: 100%;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  font-size: 4vw;
+  text-shadow: 2px 2px 4px black;
+}
+.newPost__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.newPost__formField__title {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+}
+.newPost__formField__description {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+}
+.newPost__formField__image {
+  display: flex;
+  justify-content: center;
+  padding-top: 1vh;
+}
+.newPost__label {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  font-style: italic;
+  font-weight: 700;
+  background-color: rgb(0, 0, 0);
+  padding: 3%;
+}
+@media screen and (max-width: 500px) {
+  .newPost__label {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 799px) and (min-height: 200px) {
+  .newPost__label {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 400px) {
+  .newPost__label {
+    font-size: var(--font-size-large);
+  }
+}
+.newPost__formActions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+.newPost__formActions__button {
+  height: 6vh;
+  min-height: 15px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vh;
+}
+@media screen and (max-width: 500px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 799px) and (min-height: 200px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 400px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-large);
+  }
+}/*# sourceMappingURL=newPost.css.map */

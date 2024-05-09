@@ -1,23 +1,22 @@
 <div class="masterSection__addPostSection">
     <button class="masterSection__closePopUp" onclick="closePosting()"></button>
-  
-    <form class="newPostForm" enctype="multipart/form-data">
-      <h2>Create a Post</h2>
-      <div class="formField">
-        <label for="postTitle">Title:</label>
+    <form class="newPost__form" enctype="multipart/form-data">
+      <h2 class="newPost__description">Create a Post</h2>
+      <div class="newPost__formField__title">
+        <label for="postTitle" class="newPost__label">Title:</label>
         <input type="text" id="postTitle" name="postTitle" placeholder="Enter a catchy title">
       </div>
-      <div class="formField">
-        <label for="postImage">Image:</label>
+      <div class="newPost__formField__image">
+        <label for="postImage" class="newPost__label">Image:</label>
         <input type="file" id="postImage" name="postImage" accept="image/*" required>
       </div>
-      <div class="formField">
-        <label for="postDescription">Description (optional):</label>
+      <div class="newPost__formField__description">
+        <label for="postDescription" class="newPost__label">Description (optional):</label>
         <textarea id="postDescription" name="postDescription" rows="4" placeholder="Write a brief description"></textarea>
       </div>
-      <div class="formActions">
-        <button type="submit">Post</button>
-    </div>
+      <div class="newPost__formActions">
+        <button type="submit" class="newPost__formActions__button">Post</button>
+      </div>
     </form>
   </div>
   

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("http://localhost/m-pic/login.html")
+    fetch("http://localhost:3000/newPost.html")
         .then(response => response.text())
         .then(html => {
             const tempContainer = document.createElement('div');
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("http://localhost/m-pic/newPost.html")
+    fetch("http://localhost:3000/login.html")
         .then(response => response.text())
         .then(html => {
             const tempContainer = document.createElement('div');
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("http://localhost/m-pic/viewProfile.html")
+    fetch("http://localhost:3000/viewProfile.html")
         .then(response => response.text())
         .then(html => {
             const tempContainer = document.createElement('div');
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("http://localhost/m-pic/policy.html")
+    fetch("http://localhost:3000/policy.html")
         .then(response => response.text())
         .then(html => {
             const tempContainer = document.createElement('div');
@@ -68,6 +68,15 @@ function goTop() {
 
 function login() {
     document.getElementsByClassName('masterSection__loginSection')[0].style.display= 'block';
+}
+
+function changeToLogout() {
+    var loginButton = document.getElementsByClassName('navigationBar__loginButton')[0];
+    if (loginButton) {
+        loginButton.innerText = 'Log out';
+    } else {
+        console.error("Login button not found!");
+    }
 }
 
 function closeLogin() {
@@ -92,3 +101,4 @@ function viewProfile() {
 function closeProfileViewer() {
     document.getElementsByClassName('masterSection__profileSection')[0].style.display= 'none';
 }
+

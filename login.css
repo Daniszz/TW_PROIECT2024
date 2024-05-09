@@ -1,0 +1,73 @@
+:root {
+  --font-size-small: 10px;
+  --font-size-medium: 12px;
+  --font-size-large: 18px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.login__formField__username {
+  display: flex;
+  justify-content: center;
+  padding-top: 15vh;
+}
+.login__formField__password {
+  display: flex;
+  justify-content: center;
+  padding-top: 3vh;
+}
+.login__label {
+  color: white;
+  font-style: italic;
+  font-weight: 700;
+  background-color: rgb(0, 0, 0);
+  padding: 3%;
+}
+@media screen and (max-width: 500px) {
+  .login__label {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 799px) and (min-height: 200px) {
+  .login__label {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 400px) {
+  .login__label {
+    font-size: var(--font-size-large);
+  }
+}
+.login__formActions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6vh;
+}
+.login__formActions__button {
+  height: 6vh;
+  min-height: 15px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vh;
+}
+@media screen and (max-width: 500px) {
+  .login__formActions__button {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 799px) and (min-height: 200px) {
+  .login__formActions__button {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 900px) and (min-height: 400px) {
+  .login__formActions__button {
+    font-size: var(--font-size-large);
+  }
+}/*# sourceMappingURL=login.css.map */
