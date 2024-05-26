@@ -1,0 +1,124 @@
+.newPost__description {
+  position: relative;
+  margin-top: 1vh;
+  margin-bottom: 0;
+  color: rgb(237, 1, 1);
+  font-family: Arial;
+  width: 70%;
+  height: 10%;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  font-size: 4vw;
+  text-shadow: 2px 2px 4px black;
+}
+.newPost__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 85%;
+  min-height: 150px;
+}
+.newPost__formField {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 2vh;
+}
+.newPost__formField__title {
+  padding-top: min(3vh, 3vw);
+  height: 25%;
+}
+.newPost__formField__image {
+  padding-top: min(3vh, 3vw);
+  height: 25%;
+}
+.newPost__formField__description {
+  padding-top: min(3vh, 3vw);
+  height: 25%;
+}
+.newPost__label {
+  color: white;
+  font-style: italic;
+  font-weight: 700;
+  background-color: rgb(0, 0, 0);
+  padding: 3%;
+  height: min(3vh, 3vw);
+  width: 20%;
+  white-space: nowrap;
+}
+@media screen and (min-width: 70px) {
+  .newPost__label {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 151px) and (min-height: 499px) {
+  .newPost__label {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 500px) and (min-height: 400px) {
+  .newPost__label {
+    font-size: var(--font-size-large);
+  }
+}
+.newPost__input {
+  height: min(3vh, 3vw);
+  width: 70%;
+}
+@media screen and (min-width: 70px) {
+  .newPost__input {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 151px) and (min-height: 499px) {
+  .newPost__input {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 500px) and (min-height: 400px) {
+  .newPost__input {
+    font-size: var(--font-size-large);
+  }
+}
+.newPost__input__image {
+  display: none;
+}
+.newPost__formActions {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  padding-bottom: 2vh;
+}
+.newPost__formActions__button {
+  height: min(6vh, 6vw);
+  min-height: 15px;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vh;
+}
+@media screen and (min-width: 70px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 151px) and (min-height: 499px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 500px) and (min-height: 400px) {
+  .newPost__formActions__button {
+    font-size: var(--font-size-large);
+  }
+}/*# sourceMappingURL=newPost.css.map */
