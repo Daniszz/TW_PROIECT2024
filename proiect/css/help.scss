@@ -1,0 +1,66 @@
+@mixin fontStyle {
+    @media screen and (min-width: 70px) {
+        font-size: var(--font-size-small);
+    }
+
+    @media screen and (min-width: 151px) and (min-height: 499px) {
+        font-size: var(--font-size-medium);
+    }
+
+    @media screen and (min-width: 500px) and (min-height: 400px) {
+        font-size: var(--font-size-large);
+    }
+
+    @media screen and (min-width: 700px) and (min-height: 400px) {
+        font-size: var(--font-size-extraLarge);
+    }
+}
+
+@mixin fontStyleH2Modified {
+    @media screen and (max-width: 150px) {
+        font-size: 15px;
+    }
+
+    @media screen and (min-width: 151px) and (max-width: 299px) {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 300px) {
+        font-size: 22px;
+    }
+}
+
+.masterSection__helpSection {
+    //display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    &__container {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 75%;
+        height: auto;
+        background-color: beige;
+        border-radius: 15%;
+        margin-bottom: 2vh;
+    }
+
+    &__question {
+        text-align: center;
+        text-shadow: 8px 8px 8px black;
+        font-family: cursive;
+        font-weight: 700;
+        @include fontStyleH2Modified;
+        color: rgb(183, 85, 0);
+    }
+
+    &__answer {
+        //text-shadow: 2px 2px 4px black;
+        font-family: cursive;
+        font-weight: 700;
+        @include fontStyle;
+        word-wrap: normal;
+        color: rgb(255, 102, 0);
+    }
+}

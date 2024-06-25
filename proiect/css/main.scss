@@ -1,0 +1,516 @@
+@mixin buttonBasicProp {
+    margin-inline: 2%;
+    margin-block: 1vh;
+}
+
+:root {
+    --font-size-small: 7px;
+    --font-size-small-h2: 10px;
+    --font-size-medium: 9px;
+    --font-size-medium-h2: 12px;
+    --font-size-large: 12px;
+    --font-size-large-h2: 18px;
+    --font-size-extraLarge: 19;
+}
+
+@mixin fontStyle {
+    @media screen and (min-width: 70px) {
+        font-size: var(--font-size-small);
+    }
+
+    @media screen and (min-width: 151px) and (min-height: 499px) {
+        font-size: var(--font-size-medium);
+    }
+
+    @media screen and (min-width: 500px) and (min-height: 400px) {
+        font-size: var(--font-size-large);
+    }
+
+    @media screen and (min-width: 700px) and (min-height: 400px) {
+        font-size: var(--font-size-extraLarge);
+    }
+}
+
+@mixin fontStyleH2 {
+    @media screen and (max-width: 150px) {
+        font-size: var(--font-size-small-h2);
+    }
+
+    @media screen and (min-width: 151px) and (max-width: 499px) {
+        font-size: var(--font-size-medium-h2);
+    }
+
+    @media screen and (min-width: 500px) {
+        font-size: var(--font-size-large-h2);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+}
+
+body {
+    background-image: url('images/bg.svg');
+    background-size: cover, cover;
+    background-position: center top, center bottom;
+    background-repeat: repeat-y;
+    position: relative;
+    height: fit-content;
+}
+
+.navigationBar {
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    &__top {
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 0px;
+        width: 100%;
+        height: 10vh;
+        min-height: 50px;
+        background: rgb(34, 193, 195);
+        background: linear-gradient(0deg, rgba(34, 193, 195, 1) 20%, rgba(253, 187, 45, 1) 100%);
+        border-radius: 5%;
+        border: 0px;
+    }
+
+    &__bottom {
+        margin: 0px;
+        //padding-left: 15%;
+        //padding-right: 15%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        display: none;
+
+        &__fb {
+            height: calc(min(10vh, 10vw));
+            background: none;
+            border: none;
+            width: fit-content;
+            //align-items: center;
+            min-width: 30px;
+            min-height: 30px;
+            @include fontStyleH2;
+            font-style: italic;
+            font-weight: 700;
+            //margin-right: 7%;
+        }
+
+        &__rd {
+            height: calc(min(10vh, 10vw));
+            background: none;
+            border: none;
+            //align-items: center;
+            width: fit-content;
+            min-width: 30px;
+            min-height: 30px;
+            @include fontStyleH2;
+            font-style: italic;
+            font-weight: 700;
+            //margin-left: 7%;
+        }
+
+        &__tags {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__input {
+            height: calc(min(3vh, 3vw));
+            min-height: 15px;
+            width: 30%;
+            min-width: 75px;
+        }
+
+        &__button {
+            height: calc(min(6vh, 6vw));
+            width: 30%;
+            min-width: 75px;
+            min-height: 20px;
+            @include fontStyleH2;
+            font-style: italic;
+            font-weight: 700;
+        }
+    }
+
+    &__homeButton {
+        width: fit-content;
+        min-width: 15px;
+        @include buttonBasicProp;
+        cursor: pointer;
+        transition: border-radius 0.7s;
+        transition-timing-function: ease-in-out;
+        border-radius: 25%;
+        border: 0px;
+        cursor: pointer;
+
+    }
+
+    &__logo {
+        background-color: transparent;
+        border: none;
+        min-width: fit-content;
+        width: 12vw;
+        height: 100%;
+    }
+
+    &__loginButton {
+        @include fontStyle;
+        text-align: right;
+        padding-right: 3vw;
+        width: 15vw;
+        min-width: 40px;
+        @include buttonBasicProp;
+        cursor: pointer;
+        border-radius: 100%;
+        background-image: url('images/login.png');
+        background-size: cover;
+        background-position: center;
+        transition: 0.5s;
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
+
+    }
+
+    &__loginButton:hover {
+        background-image: url('images/login.gif');
+    }
+
+    &__homeButton:hover {
+        border-radius: 100%;
+        //background: rgb(34,193,195);
+        //background: linear-gradient(0deg, rgba(34,193,195,1) 20%, rgba(219,132,209,1) 100%);
+        border: 0px;
+    }
+}
+.searchBar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 200px;
+}
+
+.viewProfileButton {
+    @include fontStyle;
+    @include buttonBasicProp;
+    background: rgb(251, 123, 63);
+    background: radial-gradient(circle, rgba(251, 123, 63, 1) 0%, rgba(252, 235, 70, 1) 76%);
+    position: fixed;
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    min-width: 40px;
+    min-height: 40px;
+    width: calc(max(9vh, 9vw));
+    height: calc(max(9vh, 9vw));
+    bottom: 2.5vh;
+    right: 4vw;
+    z-index: 9999;
+    transition: transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out;
+    cursor: pointer;
+
+}
+
+.viewProfileButton:hover {
+    color: #FFFFFF;
+    transform: rotate(360deg);
+    box-shadow: none;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px,
+        #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px,
+        #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.viewHelpButton {
+    background: rgb(251, 123, 63);
+    background: radial-gradient(circle, rgba(251, 123, 63, 1) 0%, rgba(252, 235, 70, 1) 76%);
+    position: fixed;
+    border: none;
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    min-width: 30px;
+    min-height: 20px;
+    width: calc(max(3vh, 3vw));
+    height: calc(max(9vh, 9vw));
+    bottom: 50vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    transition: transform 1.5s ease-in-out, text-shadow 1.5s ease-in-out;
+    cursor: pointer;
+
+    &__text {
+        margin: 0;
+        height: fit-content;
+        width: fit-content;
+        @include fontStyle;
+        color: white;
+        font-style: italic;
+        font-weight: 700;
+        transform: rotate(270deg);
+    }
+}
+
+.viewHelpButton:hover {
+    color: #FFFFFF;
+    //transform: rotate(360deg);
+    box-shadow: none;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px,
+        #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px,
+        #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.addPostButton {
+    @include fontStyle;
+    @include buttonBasicProp;
+    background: rgb(251, 123, 63);
+    background: radial-gradient(circle, rgba(251, 123, 63, 1) 0%, rgba(252, 235, 70, 1) 76%);
+    position: fixed;
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    min-width: 40px;
+    min-height: 40px;
+    width: calc(max(9vh, 9vw));
+    height: calc(max(9vh, 9vw));
+    bottom: 2.5vh;
+    left: 4vw;
+    z-index: 9998;
+    transition: 1s transform;
+    transition: 0.8 text-shadow;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+
+}
+
+.addPostButton:hover {
+    color: #FFFFFF;
+    transform: rotate(360deg);
+    box-shadow: none;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.viewPolicyButton {
+    @include fontStyle;
+    @include buttonBasicProp;
+    background: rgb(251, 123, 63);
+    background: radial-gradient(circle, rgba(251, 123, 63, 1) 0%, rgba(252, 235, 70, 1) 76%);
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    border-radius: 100%;
+    border: none;
+    width: 5vw;
+    height: 5vw;
+    min-width: 40px;
+    min-height: 40px;
+    bottom: 2.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    position: absolute;
+    z-index: 10000;
+    transition: 1s transform;
+    transition-timing-function: ease-in-out;
+}
+
+.viewPolicyButton:hover {
+    transform: translateX(-50%) rotate(360deg);
+}
+
+.masterSection {
+    width: 100%;
+    //height: 3500px; //for testing like this
+    margin-top: calc(max(15vh, 80px));
+    display: grid;
+    grid-gap: 2vh;
+    grid-template-columns:auto auto;
+    justify-items: center;
+    
+    
+    @media (max-aspect-ratio: 1.1/1) {
+        //display: grid;
+        //grid-template-columns:auto auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*&__postSection {
+        display: block;
+        //todo
+    }*/
+
+    @mixin popUp {
+        position: fixed;
+
+        @media (max-aspect-ratio: 1.1/1) {
+            top: 15vh;
+            width: 70vw;
+            left: 15vw;
+            right: 15vw;
+            height: 50vh;
+        }
+
+        @media (max-aspect-ratio: 2/1) and (min-aspect-ratio: 1.11/1) {
+            top: 20vh;
+            height: calc(min(60vh, 75vw));
+        }
+
+        top: 10vh;
+        left: 25vw;
+        right: 25vw;
+        bottom: 20vh;
+        width: 50vw;
+        height: 80vh;
+        min-width: 100px;
+        //min-height: 150px;
+        background-color: #FF2D95;
+        border-radius: 5%;
+        background-size: cover;
+    }
+    @mixin mediumPopUp {
+        position: fixed;
+    
+        @media (max-aspect-ratio: 1.1/1) {
+            top: 10vh;         // Decreased to move the pop-up higher
+            width: 90vw;       // Increased width
+            left: 5vw;         // Decreased to center the larger pop-up
+            right: 5vw;        // Decreased to center the larger pop-up
+            height: 60vh;      // Increased height
+        }
+    
+        @media (max-aspect-ratio: 2/1) and (min-aspect-ratio: 1.11/1) {
+            top: 15vh;         // Decreased to move the pop-up higher
+            height: calc(min(70vh, 90vw)); // Increased height
+        }
+    
+        top: 5vh;             // Decreased to move the pop-up higher
+        left: 15vw;           // Decreased to center the larger pop-up
+        right: 15vw;          // Decreased to center the larger pop-up
+        bottom: 15vh;         // Decreased to move the pop-up higher
+        width: 70vw;          // Increased width
+        height: 85vh;         // Increased height
+        min-width: 100px;
+        //min-height: 150px;
+        background-color: #FF2D95;
+        border-radius: 5%;
+        background-size: cover;
+    }
+    
+    
+    @mixin bigPopUp {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/popUpBackground.svg');
+        background-size: cover;
+        background-color: #FF2D95;
+        border-radius: 5%;
+    }
+
+    &__loginSection {
+        display: none;
+        //min-height: 100px;
+        @include popUp;
+        background-image: url('images/popUpBackground.svg');
+        overflow: auto;
+    }
+
+    &__registerSection {
+        display: none;
+        //min-height: 200px;
+        @include bigPopUp;
+        background-image: url('images/popUpBackground.svg');
+        overflow: auto;
+    }
+
+    &__helpSection {
+        display: none;
+        position: fixed;
+        top: 0;
+        //min-height: 200px;
+        @include bigPopUp;
+        background-image: url('images/questionBg.svg');
+        overflow: auto;
+    }
+
+    &__adminSection {
+        display: none;
+        position: fixed;
+        top: 0;
+        //min-height: 200px;
+        @include bigPopUp;
+        background-image: url('images/questionBg.svg');
+        overflow: auto;
+    }
+
+    &__addPostSection {
+        display: none;
+        //min-height: 100px;
+        @include popUp;
+        background-image: url('images/popUpBackground.svg');
+        overflow: auto;
+    }
+    &__photoSection {
+        display: none;
+        //min-height: 100px;
+        @include mediumPopUp ;
+        background-image: url('images/popUpBackground.svg');
+        overflow: auto;
+    }
+
+
+    &__profileSection {
+        display: none;
+        @include popUp;
+        overflow: auto;
+        background-image: url('images/popUpBackground.svg');
+        //min-height: 130px;
+    }
+
+    &__policySection {
+        display: none;
+        @include popUp;
+        // todo
+    }
+
+    &__closePopUp {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        width: calc(max(3vh, 3vw));
+        min-width: 15px;
+        min-height: 15px;
+        height: calc(max(3vh, 3vw));
+        background-image: url('images/closeButton.svg');
+        background-size: cover;
+        background-color: black;
+        border: none;
+        border-radius: 100%;
+    }
+}

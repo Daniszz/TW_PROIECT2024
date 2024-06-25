@@ -1,0 +1,87 @@
+@mixin fontStyle {
+    @media screen and (min-width: 70px) {
+        font-size: var(--font-size-small);
+    }
+
+    @media screen and (min-width: 151px) and (min-height: 499px) {
+        font-size: var(--font-size-medium);
+    }
+
+    @media screen and (min-width: 500px) and (min-height: 400px) {
+        font-size: var(--font-size-large);
+    }
+
+    @media screen and (min-width: 700px) and (min-height: 400px) {
+        font-size: var(--font-size-extraLarge);
+    }
+}
+
+@mixin fontStyleH2Modified {
+    @media screen and (max-width: 150px) {
+        font-size: 15px;
+    }
+
+    @media screen and (min-width: 151px) and (max-width: 299px) {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 300px) {
+        font-size: 22px;
+    }
+}
+
+.masterSection__adminSection {
+    //display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 75%;
+        height: auto;
+        background-color: beige;
+        border-radius: 15%;
+        margin-bottom: 2vh;
+    }
+
+    &__userContainer {
+        background-color: beige;
+        width: fit-content;
+        margin-top: 3vh;
+        display: flex;
+        height: 6vh;
+        min-height: 25px;
+        flex-direction: row;
+    }
+
+    &__user {
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+        margin-top: 0;
+        margin-bottom: 0;
+        //text-shadow: 8px 8px 8px black;
+        font-family: cursive;
+        font-weight: 700;
+        @include fontStyleH2Modified;
+        color: rgb(183, 85, 0);
+    }
+
+    &__deleteUser {
+        @include fontStyle;
+        font-style: italic;
+        font-weight: 700;
+    }
+}
+
+#adminUsersContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,33 @@
+<div class="masterSection__addPostSection">
+  <button class="masterSection__closePopUp" onclick="closePosting()"></button>
+  <form id="postForm" class="newPost__form" action="post.php" method="POST" enctype="multipart/form-data"> 
+      <h2 class="newPost__description">Create a Post</h2>
+      <div class="newPost__formField__title">
+          <label for="postTitle" class="newPost__label">Source:</label>
+          <select class="newPost__input" id="postTitle" name="postTitle" onchange="handleSourceChange(this)">
+              <option value="none" disabled selected>Select a source</option> 
+              <option value="reddit">reddit</option>
+          </select>
+      </div>
+      <div class="newPost__formField__description">
+          <label for="postDescription" class="newPost__label">Description:</label>
+          <input class="newPost__input" type="text" id="postDescription" name="postDescription" placeholder="tags: wildlife, experience, toys">
+      </div>
+      <div class="newPost__formField__image">
+          <label for="postImage" class="newPost__label__image" >
+              <img src="css/images/addImage.svg" style="width: 100%; height: 100%;">
+              <input class="newPost__input__image" type="file" accept=".png, .svg, .jpg" id="postImage" name="postImage" required  onchange="uploadPhoto()">
+          </label>
+      </div>
+      <input type="hidden" id="redditAccessToken" name="redditAccessToken">
+      <input type="hidden" id="unsplashAccessToken" name="unsplashAccessToken">
+     
+        
+      <div class="newPost__formActions">
+        <button type="button" onclick="applyFilters()" class="newPost__formActions__button">Filters</button>
+        <button type="submit" name="submitPost" class="newPost__formActions__button">Post</button>
+      </div>
+  </form>
+</div>
+
+

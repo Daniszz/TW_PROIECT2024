@@ -1,0 +1,85 @@
+.masterSection__adminSection {
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.masterSection__adminSection__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 75%;
+  height: auto;
+  background-color: beige;
+  border-radius: 15%;
+  margin-bottom: 2vh;
+}
+.masterSection__adminSection__userContainer {
+  background-color: beige;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 3vh;
+  display: flex;
+  height: 6vh;
+  min-height: 25px;
+  flex-direction: row;
+}
+.masterSection__adminSection__user {
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: cursive;
+  font-weight: 700;
+  color: rgb(183, 85, 0);
+}
+@media screen and (max-width: 150px) {
+  .masterSection__adminSection__user {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 151px) and (max-width: 299px) {
+  .masterSection__adminSection__user {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 300px) {
+  .masterSection__adminSection__user {
+    font-size: 22px;
+  }
+}
+.masterSection__adminSection__deleteUser {
+  font-style: italic;
+  font-weight: 700;
+}
+@media screen and (min-width: 70px) {
+  .masterSection__adminSection__deleteUser {
+    font-size: var(--font-size-small);
+  }
+}
+@media screen and (min-width: 151px) and (min-height: 499px) {
+  .masterSection__adminSection__deleteUser {
+    font-size: var(--font-size-medium);
+  }
+}
+@media screen and (min-width: 500px) and (min-height: 400px) {
+  .masterSection__adminSection__deleteUser {
+    font-size: var(--font-size-large);
+  }
+}
+@media screen and (min-width: 700px) and (min-height: 400px) {
+  .masterSection__adminSection__deleteUser {
+    font-size: var(--font-size-extraLarge);
+  }
+}
+
+#adminUsersContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}/*# sourceMappingURL=admin.css.map */

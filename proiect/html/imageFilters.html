@@ -1,0 +1,45 @@
+<div class="masterSection__photoSection">
+  <button class="masterSection__closePopUp" onclick="closePhotoSection()"></button>
+  <div class="photoFilter"></div>
+  <div class="contentContainer">
+    <div class="imageContainer">
+      <img id="filteredImg" src="uploads/uploaded_photo.jpg" alt="Image">
+    </div>
+    <div class="controlsContainer">
+      <div class="filterButtons"></div>
+      <div class="sliderContainer">
+        <div>
+          <label>Grayscale:</label>
+          <input type="range" min="0" max="100" value="0" class="slider" id="grayscaleSlider" onchange="apply()">
+          <span id="grayscaleValue">0</span>
+        </div>
+        <div>
+          <label>Sepia:</label>
+          <input type="range" min="0" max="100" value="0" class="slider" id="sepiaSlider" onchange="apply()">
+          <span id="sepiaValue">0</span>
+        </div>
+        <div>
+          <label>Blur:</label>
+          <input type="range" min="0" max="10" value="0" class="slider" id="blurSlider" onchange="apply()">
+          <span id="blurValue">0</span>
+        </div>
+        <div>
+          <label>Brightness:</label>
+          <input type="range" min="0" max="200" value="100" class="slider" id="brightnessSlider" onchange="apply()">
+          <span id="brightnessValue">100</span>
+        </div>
+        <div>
+          <label>Contrast:</label>
+          <input type="range" min="0" max="200" value="100" class="slider" id="contrastSlider" onchange="apply()">
+          <span id="contrastValue">100</span>
+        </div>
+      </div>
+      <div class="default">
+        <button type="button" class="photoSection__default__button" onclick="restoreDefaults()">Restore to default</button>
+      </div>
+      <div class="finished">
+        <button type="button" class="photoSection__finished__button" onclick="sendBack()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
